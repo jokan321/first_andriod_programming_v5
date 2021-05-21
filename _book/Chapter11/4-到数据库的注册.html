@@ -1,0 +1,4803 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>04.到数据库的注册 · GitBook Tutorial</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4-到数据库的注册.html" />
+    
+    
+    <link rel="prev" href="3-添加连携数据库于RecyclerView的处理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    写在开始的话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    第一章-准备开发环境吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/1-Android是什么.html">
+            
+                <a href="../Chapter1/1-Android是什么.html">
+            
+                    
+                    01.Android是什么
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../Chapter1/1-Android是什么.html">
+            
+                <a href="../Chapter1/1-Android是什么.html#google_play">
+            
+                    
+                    ・Google Play
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/2-Android_App的开发.html">
+            
+                <a href="../Chapter1/2-Android_App的开发.html">
+            
+                    
+                    02.Android APP的开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../Chapter1/2-Android_App的开发.html">
+            
+                <a href="../Chapter1/2-Android_App的开发.html#Android_APP开发所必要的东西">
+            
+                    
+                    ・Android APP开发所必要的东西
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../Chapter1/2-Android_App的开发.html">
+            
+                <a href="../Chapter1/2-Android_App的开发.html#从Java到Kotlin">
+            
+                    
+                    ・从Java到Kotlin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html">
+            
+                    
+                    03.Android Studio的安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html#Android_APP开发所必要的东西">
+            
+                    
+                    ・安装手顺 -Windows的场合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html#从Java到Kotlin">
+            
+                    
+                    ・安装手顺 -macOS的场合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html#Android_Studio的setup">
+            
+                    
+                    ・Android Studio的setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html#从Java到Kotlin">
+            
+                    
+                    ・Android SDK的追加安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="../Chapter1/3-Android_Studio的安装.html">
+            
+                <a href="../Chapter1/3-Android_Studio的安装.html#Android_Studio的设定">
+            
+                    
+                    ・Android Studio的设定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    第二章-尝试使用Android Studio吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/1-Android_Studio的工程.html">
+            
+                <a href="../Chapter2/1-Android_Studio的工程.html">
+            
+                    
+                    01.Android Studio的工程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../Chapter2/1-Android_Studio的工程.html">
+            
+                <a href="../Chapter2/1-Android_Studio的工程.html#工程的作成">
+            
+                    
+                    ・工程的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html">
+            
+                    
+                    02.准备安卓模拟器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#起动AVD_Manager">
+            
+                    
+                    ・起动AVD Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#安卓模拟器的作成">
+            
+                    
+                    ・安卓模拟器的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#在Android_Studio内实行安卓模拟器">
+            
+                    
+                    ・在Android Studio内运行安卓模拟器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#起动安卓模拟器">
+            
+                    
+                    ・起动安卓模拟器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#安卓模拟器的使用方法">
+            
+                    
+                    ・安卓模拟器的使用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="../Chapter2/2-准备安卓模拟器.html">
+            
+                <a href="../Chapter2/2-准备安卓模拟器.html#将语言变为日语">
+            
+                    
+                    ・将语言变为日语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/3-在真机上运行.html">
+            
+                <a href="../Chapter2/3-在真机上运行.html">
+            
+                    
+                    03.在真机上运行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../Chapter2/3-在真机上运行.html">
+            
+                <a href="../Chapter2/3-在真机上运行.html#把端末变更为开发者模式">
+            
+                    
+                    ・把端末变更为开发者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../Chapter2/3-在真机上运行.html">
+            
+                <a href="../Chapter2/3-在真机上运行.html#USB驱动的安装_——仅限Windows">
+            
+                    
+                    ・USB驱动的安装 ——仅限Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../Chapter2/3-在真机上运行.html">
+            
+                <a href="../Chapter2/3-在真机上运行.html#在真机上的运行">
+            
+                    
+                    ・在真机上的运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    第三章-「你好！安卓」作成首个APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/1-安卓项目.html">
+            
+                <a href="../Chapter3/1-安卓项目.html">
+            
+                    
+                    01.安卓项目
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../Chapter3/1-安卓项目.html">
+            
+                <a href="../Chapter3/1-安卓项目.html#Android_Studio的基本页面">
+            
+                    
+                    ・Android Studio的基本页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../Chapter3/1-安卓项目.html">
+            
+                <a href="../Chapter3/1-安卓项目.html#工程构成要素">
+            
+                    
+                    ・工程构成要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/2-页面作成.html">
+            
+                <a href="../Chapter3/2-页面作成.html">
+            
+                    
+                    02.页面作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../Chapter3/2-页面作成.html">
+            
+                <a href="../Chapter3/2-页面作成.html#layout编辑页面">
+            
+                    
+                    ・layout编辑页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../Chapter3/2-页面作成.html">
+            
+                <a href="../Chapter3/2-页面作成.html#view的配置与字符串的变更">
+            
+                    
+                    ・view的配置与字符串的变更
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../Chapter3/2-页面作成.html">
+            
+                <a href="../Chapter3/2-页面作成.html#确认view的信息">
+            
+                    
+                    ・确认view的信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../Chapter3/2-页面作成.html">
+            
+                <a href="../Chapter3/2-页面作成.html#Translations_Editor与字符串资源">
+            
+                    
+                    ・Translations Editor与字符串资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html">
+            
+                    
+                    03.认识Activity
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#改变Activity与页面layout">
+            
+                    
+                    ・改变Activity与页面layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#添加按钮">
+            
+                    
+                    ・添加按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#记述触碰按钮时的处理">
+            
+                    
+                    ・记述触碰按钮时的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#使用code补全机能">
+            
+                    
+                    ・使用code补全机能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#运行一下APP吧">
+            
+                    
+                    ・运行一下APP吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.6" data-path="../Chapter3/3-认识Activity.html">
+            
+                <a href="../Chapter3/3-认识Activity.html#使用Java实装的场合">
+            
+                    
+                    ・使用Java实装的场合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Chapter3/4-添加图片.html">
+            
+                <a href="../Chapter3/4-添加图片.html">
+            
+                    
+                    04.添加图片
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../Chapter3/4-添加图片.html">
+            
+                <a href="../Chapter3/4-添加图片.html#图片资源的注册">
+            
+                    
+                    ・图片资源的注册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../Chapter3/4-添加图片.html">
+            
+                <a href="../Chapter3/4-添加图片.html#配置图片到页面">
+            
+                    
+                    ・配置图片到页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../Chapter3/4-添加图片.html">
+            
+                <a href="../Chapter3/4-添加图片.html#变更图片的显示方法">
+            
+                    
+                    ・变更图片的显示方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Chapter3/5-Activity的详细.html">
+            
+                <a href="../Chapter3/5-Activity的详细.html">
+            
+                    
+                    05.Activity的详细
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../Chapter3/5-Activity的详细.html">
+            
+                <a href="../Chapter3/5-Activity的详细.html#何为Activity">
+            
+                    
+                    ・何为Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../Chapter3/5-Activity的详细.html">
+            
+                <a href="../Chapter3/5-Activity的详细.html#Activity与生命周期">
+            
+                    
+                    ・Activity与生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../Chapter3/5-Activity的详细.html">
+            
+                <a href="../Chapter3/5-Activity的详细.html#回调方法">
+            
+                    
+                    ・回调方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    第四章-尝试使用Kotlin吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/1-为什么是Kotlin.html">
+            
+                <a href="../Chapter4/1-为什么是Kotlin.html">
+            
+                    
+                    01.为什么是Kotlin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../Chapter4/1-为什么是Kotlin.html">
+            
+                <a href="../Chapter4/1-为什么是Kotlin.html#Java，然后到Kotlin">
+            
+                    
+                    ・Java，然后到Kotlin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../Chapter4/1-为什么是Kotlin.html">
+            
+                <a href="../Chapter4/1-为什么是Kotlin.html#Kotlin的特征">
+            
+                    
+                    ・Kotlin的特征
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/2-使用REPL.html">
+            
+                <a href="../Chapter4/2-使用REPL.html">
+            
+                    
+                    02.使用REPL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html">
+            
+                    
+                    03.变量与类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#变量与常量">
+            
+                    
+                    ・变量与常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#基本类型">
+            
+                    
+                    ・基本类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#字符串">
+            
+                    
+                    ・字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#类型的转换">
+            
+                    
+                    ・类型的转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#非可空类型与可空类型">
+            
+                    
+                    ・非可空类型与可空类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../Chapter4/3-变量与类型.html">
+            
+                <a href="../Chapter4/3-变量与类型.html#数组">
+            
+                    
+                    ・数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../Chapter4/4-控制构造.html">
+            
+                <a href="../Chapter4/4-控制构造.html">
+            
+                    
+                    04.控制构造
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../Chapter4/4-控制构造.html">
+            
+                <a href="../Chapter4/4-控制构造.html#if式">
+            
+                    
+                    ・if式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../Chapter4/4-控制构造.html">
+            
+                <a href="../Chapter4/4-控制构造.html#when式">
+            
+                    
+                    ・when式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../Chapter4/4-控制构造.html">
+            
+                <a href="../Chapter4/4-控制构造.html#for语句">
+            
+                    
+                    ・for语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../Chapter4/4-控制构造.html">
+            
+                <a href="../Chapter4/4-控制构造.html#while与do-while">
+            
+                    
+                    ・while与do-while
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../Chapter4/5-Kotlin的集合.html">
+            
+                <a href="../Chapter4/5-Kotlin的集合.html">
+            
+                    
+                    05.Kotlin的集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../Chapter4/5-Kotlin的集合.html">
+            
+                <a href="../Chapter4/5-Kotlin的集合.html#list">
+            
+                    
+                    ・list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../Chapter4/5-Kotlin的集合.html">
+            
+                <a href="../Chapter4/5-Kotlin的集合.html#set">
+            
+                    
+                    ・set
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.3" data-path="../Chapter4/5-Kotlin的集合.html">
+            
+                <a href="../Chapter4/5-Kotlin的集合.html#map">
+            
+                    
+                    ・map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../Chapter4/6-函数与Lambda表达式.html">
+            
+                <a href="../Chapter4/6-函数与Lambda表达式.html">
+            
+                    
+                    0.6函数与Lambda表达式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../Chapter4/6-函数与Lambda表达式.html">
+            
+                <a href="../Chapter4/6-函数与Lambda表达式.html#函数">
+            
+                    
+                    ・函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6.2" data-path="../Chapter4/6-函数与Lambda表达式.html">
+            
+                <a href="../Chapter4/6-函数与Lambda表达式.html#Lambda表达式与函数类型">
+            
+                    
+                    ・Lambda表达式与函数类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html">
+            
+                    
+                    07.类与接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.7.1" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#类与接口的定义">
+            
+                    
+                    ・类与接口的定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.2" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#属性">
+            
+                    
+                    ・属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.3" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#在Kotlin通过属性访问Java的类">
+            
+                    
+                    ・在Kotlin通过属性访问Java的类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.4" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#lateinit修饰符">
+            
+                    
+                    ・lateinit修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.5" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#构造器">
+            
+                    
+                    ・构造器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.6" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#初始化">
+            
+                    
+                    ・初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.7" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#类的继承">
+            
+                    
+                    ・类的继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7.8" data-path="../Chapter4/7-类与接口.html">
+            
+                <a href="../Chapter4/7-类与接口.html#接口的实装">
+            
+                    
+                    ・接口的实装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html">
+            
+                    
+                    08.Kotlin的其它机能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#类型的check与智能转换">
+            
+                    
+                    ・类型的check与智能转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.2" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#类型转换">
+            
+                    
+                    ・类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.3" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#object关键字">
+            
+                    
+                    ・object关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.4" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#SAM转换">
+            
+                    
+                    ・SAM转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.5" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#空安全">
+            
+                    
+                    ・空安全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.6" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#可空类型与判空">
+            
+                    
+                    ・可空类型与判空
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.7" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#scope函数">
+            
+                    
+                    ・scope函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.8" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#Pair">
+            
+                    
+                    ・Pair
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.9" data-path="../Chapter4/8-Kotlin的其它机能.html">
+            
+                <a href="../Chapter4/8-Kotlin的其它机能.html#扩展函数">
+            
+                    
+                    ・扩展函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter5/">
+            
+                <a href="../Chapter5/">
+            
+                    
+                    第五章-最强!?石头剪刀布APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Chapter5/1-石头剪刀布APP的构成.html">
+            
+                <a href="../Chapter5/1-石头剪刀布APP的构成.html">
+            
+                    
+                    01.石头剪刀布APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../Chapter5/1-石头剪刀布APP的构成.html">
+            
+                <a href="../Chapter5/1-石头剪刀布APP的构成.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../Chapter5/1-石头剪刀布APP的构成.html">
+            
+                <a href="../Chapter5/1-石头剪刀布APP的构成.html#复制剪刀，石头，布的图片">
+            
+                    
+                    ・复制剪刀，石头，布的图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Chapter5/2-选择玩家手页面的作成.html">
+            
+                <a href="../Chapter5/2-选择玩家手页面的作成.html">
+            
+                    
+                    02.选择玩家手页面的作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../Chapter5/2-选择玩家手页面的作成.html">
+            
+                <a href="../Chapter5/2-选择玩家手页面的作成.html#页面的作成">
+            
+                    
+                    ・页面的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                    
+                    03.作成石头剪刀布游戏结果页面吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html#添加Activity">
+            
+                    
+                    ・添加Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html#配置为了显示结果的标签">
+            
+                    
+                    ・配置为了显示结果的标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html#配置显示自己选择了的手的ImageView">
+            
+                    
+                    ・配置显示自己选择了的手的ImageView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html#配置显示电脑的手的ImageView">
+            
+                    
+                    ・配置显示电脑的手的ImageView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html">
+            
+                <a href="../Chapter5/3-作成石头剪刀布游戏结果页面吧.html#配置「返回」按钮">
+            
+                    
+                    ・配置「返回」按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Chapter5/4-ConstraintLayout的设定方法.html">
+            
+                <a href="../Chapter5/4-ConstraintLayout的设定方法.html">
+            
+                    
+                    04.ConstraintLayout的设定方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.4.1" data-path="../Chapter5/4-ConstraintLayout的设定方法.html">
+            
+                <a href="../Chapter5/4-ConstraintLayout的设定方法.html#约束的设定方法">
+            
+                    
+                    ・约束的设定方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.2" data-path="../Chapter5/4-ConstraintLayout的设定方法.html">
+            
+                <a href="../Chapter5/4-ConstraintLayout的设定方法.html#view的排列">
+            
+                    
+                    ・view的排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4.3" data-path="../Chapter5/4-ConstraintLayout的设定方法.html">
+            
+                <a href="../Chapter5/4-ConstraintLayout的设定方法.html#在「Attributes」画板上的设定">
+            
+                    
+                    ・在「Attributes」画板上的设定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html">
+            
+                    
+                    05.使用Intent迁移页面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.5.1" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#准备触碰按钮时要实行的方法">
+            
+                    
+                    ・准备触碰按钮时要实行的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.2" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#自动导入失败时的操作">
+            
+                    
+                    ・自动导入失败时的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.3" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#绑定图片按钮与方法">
+            
+                    
+                    ・绑定图片按钮与方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.4" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.5" data-path="../Chapter5/5-在迁移源往Intent里面储存数据.html">
+            
+                <a href="../Chapter5/5-在迁移源往Intent里面储存数据.html#在迁移源往Intent里面储存数据">
+            
+                    
+                    ・在迁移源往Intent里面储存数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.6" data-path="../Chapter5/5-在迁移目标从Intent里面取出数据.html">
+            
+                <a href="../Chapter5/5-在迁移目标从Intent里面取出数据.html#在迁移目标从Intent里面取出数据">
+            
+                    
+                    ・在迁移目标从Intent里面取出数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.7" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#基于when式处理的分歧">
+            
+                    
+                    ・基于when式处理的分歧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5.8" data-path="../Chapter5/5-使用Intent迁移页面.html">
+            
+                <a href="../Chapter5/5-使用Intent迁移页面.html#显示电脑的手与石头剪刀布的结果">
+            
+                    
+                    ・显示电脑的手与石头剪刀布的结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                <a href="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                    
+                    0.6将数据保存在共有的Preference里
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.6.1" data-path="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                <a href="../Chapter5/6-将数据保存在共有的Preference里.html#数据的保存">
+            
+                    
+                    ・数据的保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.2" data-path="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                <a href="../Chapter5/6-将数据保存在共有的Preference里.html#使用KTX">
+            
+                    
+                    ・使用KTX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.3" data-path="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                <a href="../Chapter5/6-将数据保存在共有的Preference里.html#共有Preference的清除">
+            
+                    
+                    ・共有Preference的清除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6.4" data-path="../Chapter5/6-将数据保存在共有的Preference里.html">
+            
+                <a href="../Chapter5/6-将数据保存在共有的Preference里.html#石头剪刀布逻辑的实装">
+            
+                    
+                    ・石头剪刀布逻辑的实装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    第六章-做一个体型记录的APP吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chapter6/1-体型记录APP的构成.html">
+            
+                <a href="../Chapter6/1-体型记录APP的构成.html">
+            
+                    
+                    01.体型记录APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../Chapter6/1-体型记录APP的构成.html">
+            
+                <a href="../Chapter6/1-体型记录APP的构成.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Chapter6/2-选择玩家手页面的作成.html">
+            
+                <a href="../Chapter6/2-选择玩家手页面的作成.html">
+            
+                    
+                    02.选择玩家手页面的作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../Chapter6/2-选择玩家手页面的作成.html">
+            
+                <a href="../Chapter6/2-选择玩家手页面的作成.html#页面的作成">
+            
+                    
+                    ・页面的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../Chapter6/3-APP的图标与向量形式的图片.html">
+            
+                <a href="../Chapter6/3-APP的图标与向量形式的图片.html">
+            
+                    
+                    03.APP的图标与向量形式的图片
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../Chapter6/3-APP的图标与向量形式的图片.html">
+            
+                <a href="../Chapter6/3-APP的图标与向量形式的图片.html#关于APP的图标">
+            
+                    
+                    ・关于APP的图标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../Chapter5/3-APP的图标与向量形式的图片.html">
+            
+                <a href="../Chapter5/3-APP的图标与向量形式的图片.html#关于VectorDrawable">
+            
+                    
+                    ・关于VectorDrawable
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../Chapter6/4-实装保存处理.html">
+            
+                <a href="../Chapter6/4-实装保存处理.html">
+            
+                    
+                    04.实装保存处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.4.1" data-path="../Chapter6/4-实装保存处理.html">
+            
+                <a href="../Chapter6/4-实装保存处理.html#约束的设定方法">
+            
+                    
+                    ・关于属性与安卓SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4.2" data-path="../Chapter6/4-实装保存处理.html">
+            
+                <a href="../Chapter6/4-实装保存处理.html#试着跑一下吧">
+            
+                    
+                    ・试着跑一下吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    第七章-用碎片做一个动物图鉴吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../Chapter7/1-动物图鉴APP的构成.html">
+            
+                <a href="../Chapter7/1-动物图鉴APP的构成.html">
+            
+                    
+                    01.动物图鉴APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../Chapter7/1-动物图鉴APP的构成.html">
+            
+                <a href="../Chapter7/1-动物图鉴APP的构成.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="../Chapter7/1-动物图鉴APP的构成.html">
+            
+                <a href="../Chapter7/1-动物图鉴APP的构成.html#copy图片">
+            
+                    
+                    ・copy图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="../Chapter7/1-动物图鉴APP的构成.html">
+            
+                <a href="../Chapter7/1-动物图鉴APP的构成.html#添加Activity">
+            
+                    
+                    ・添加Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../Chapter7/2-碎片的基础知识.html">
+            
+                <a href="../Chapter7/2-碎片的基础知识.html">
+            
+                    
+                    02.碎片的基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../Chapter7/2-碎片的基础知识.html">
+            
+                <a href="../Chapter7/2-碎片的基础知识.html#碎片的生命周期">
+            
+                    
+                    ・碎片的生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../Chapter7/3-Title显示用碎片的作成.html">
+            
+                <a href="../Chapter7/3-Title显示用碎片的作成.html">
+            
+                    
+                    03.Title显示用碎片的作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../Chapter7/3-Title显示用碎片的作成.html">
+            
+                <a href="../Chapter7/3-Title显示用碎片的作成.html#添加碎片">
+            
+                    
+                    ・添加碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../Chapter7/3-Title显示用碎片的作成.html">
+            
+                <a href="../Chapter7/3-Title显示用碎片的作成.html#页面layout的作成">
+            
+                    
+                    ・页面layout的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../Chapter7/3-Title显示用碎片的作成.html">
+            
+                <a href="../Chapter7/3-Title显示用碎片的作成.html#碎片的处理的作成">
+            
+                    
+                    ・碎片的处理的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../Chapter7/4-Title显示用碎片的Activity的配置.html">
+            
+                <a href="../Chapter7/4-Title显示用碎片的Activity的配置.html">
+            
+                    
+                    04.Title显示用碎片的Activity的配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.4.1" data-path="../Chapter7/4-Title显示用碎片的Activity的配置.html">
+            
+                <a href="../Chapter7/4-Title显示用碎片的Activity的配置.html#向主页面添加碎片">
+            
+                    
+                    ・向主页面添加碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../Chapter7/5-辅助页面的作成.html">
+            
+                <a href="../Chapter7/5-辅助页面的作成.html">
+            
+                    
+                    05.辅助页面的作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../Chapter7/5-辅助页面的作成.html">
+            
+                <a href="../Chapter7/5-辅助页面的作成.html#向辅助页面添加碎片">
+            
+                    
+                    ・向辅助页面添加碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.2" data-path="../Chapter7/5-辅助页面的作成.html">
+            
+                <a href="../Chapter7/5-辅助页面的作成.html#按钮在水平方向等距排开">
+            
+                    
+                    ・按钮在水平方向等距排开
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.3" data-path="../Chapter7/5-辅助页面的作成.html">
+            
+                <a href="../Chapter7/5-辅助页面的作成.html#配置碎片显示用的view">
+            
+                    
+                    ・配置碎片显示用的view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5.4" data-path="../Chapter7/5-辅助页面的作成.html">
+            
+                <a href="../Chapter7/5-辅助页面的作成.html#准备动物的碎片">
+            
+                    
+                    ・准备动物的碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../Chapter7/6-在程序中添加碎片.html">
+            
+                <a href="../Chapter7/6-在程序中添加碎片.html">
+            
+                    
+                    06.在程序中添加碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../Chapter7/7-完成APP吧.html">
+            
+                <a href="../Chapter7/7-完成APP吧.html">
+            
+                    
+                    07.完成APP吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="../Chapter7/7-完成APP吧.html">
+            
+                <a href="../Chapter7/7-完成APP吧.html#页面的配置">
+            
+                    
+                    ・页面的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="../Chapter7/7-完成APP吧.html">
+            
+                <a href="../Chapter7/7-完成APP吧.html#「下一步」按钮的处理">
+            
+                    
+                    ・「下一步」按钮的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="../Chapter7/7-完成APP吧.html">
+            
+                <a href="../Chapter7/7-完成APP吧.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../Chapter8/">
+            
+                <a href="../Chapter8/">
+            
+                    
+                    第八章-使用碎片的幻灯片APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../Chapter8/1-幻灯片APP的构成.html">
+            
+                <a href="../Chapter8/1-幻灯片APP的构成.html">
+            
+                    
+                    01.幻灯片APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="../Chapter8/1-幻灯片APP的构成.html">
+            
+                <a href="../Chapter8/1-幻灯片APP的构成.html#copy图片">
+            
+                    
+                    ・copy图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../Chapter8/2-滑动屏幕切换view的机制.html">
+            
+                <a href="../Chapter8/2-滑动屏幕切换view的机制.html">
+            
+                    
+                    02.滑动屏幕切换view的机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.2.1" data-path="../Chapter8/2-滑动屏幕切换view的机制.html">
+            
+                <a href="../Chapter8/2-滑动屏幕切换view的机制.html#ViewPager的两种动作">
+            
+                    
+                    ・ViewPager的两种动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../Chapter8/3-显示页面的碎片的作成.html">
+            
+                <a href="../Chapter8/3-显示页面的碎片的作成.html">
+            
+                    
+                    03.显示页面的碎片的作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../Chapter8/3-显示页面的碎片的作成.html">
+            
+                <a href="../Chapter8/3-显示页面的碎片的作成.html#碎片与Activity的再作成">
+            
+                    
+                    ・碎片与Activity的再作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../Chapter8/4-使用ViewPager2.html">
+            
+                <a href="../Chapter8/4-使用ViewPager2.html">
+            
+                    
+                    04.使用ViewPager2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../Chapter8/5-使用Timer实装幻灯片.html">
+            
+                <a href="../Chapter8/5-使用Timer实装幻灯片.html">
+            
+                    
+                    05.使用Timer实装幻灯片
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.5.1" data-path="../Chapter8/5-使用Timer实装幻灯片.html">
+            
+                <a href="../Chapter8/5-使用Timer实装幻灯片.html#通过timer函数进行定时处理">
+            
+                    
+                    ・通过timer函数进行定时处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5.2" data-path="../Chapter8/5-使用Timer实装幻灯片.html">
+            
+                <a href="../Chapter8/5-使用Timer实装幻灯片.html#Handler与Runnable">
+            
+                    
+                    ・Handler与Runnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../Chapter8/6-播放声音文件.html">
+            
+                <a href="../Chapter8/6-播放声音文件.html">
+            
+                    
+                    06.播放声音文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.6.1" data-path="../Chapter8/6-播放声音文件.html">
+            
+                <a href="../Chapter8/6-播放声音文件.html#往工程里添加声音文件">
+            
+                    
+                    ・往工程里添加声音文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6.2" data-path="../Chapter8/6-播放声音文件.html">
+            
+                <a href="../Chapter8/6-播放声音文件.html#实装MediaPlayer">
+            
+                    
+                    ・实装MediaPlayer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../Chapter8/7-变更幻灯片的动作.html">
+            
+                <a href="../Chapter8/7-变更幻灯片的动作.html">
+            
+                    
+                    07.变更幻灯片的动作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.7.1" data-path="../Chapter8/7-变更幻灯片的动作.html">
+            
+                <a href="../Chapter8/7-变更幻灯片的动作.html#纵向滚动">
+            
+                    
+                    ・纵向滚动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.2" data-path="../Chapter8/7-变更幻灯片的动作.html">
+            
+                <a href="../Chapter8/7-变更幻灯片的动作.html#页面切换的动画">
+            
+                    
+                    ・页面切换的动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7.3" data-path="../Chapter8/7-变更幻灯片的动作.html">
+            
+                <a href="../Chapter8/7-变更幻灯片的动作.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Chapter9/">
+            
+                <a href="../Chapter9/">
+            
+                    
+                    第九章-做一个倒计时器吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Chapter9/1-幻灯片APP的构成.html">
+            
+                <a href="../Chapter9/1-幻灯片APP的构成.html">
+            
+                    
+                    01.倒计时器的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../Chapter9/1-幻灯片APP的构成.html">
+            
+                <a href="../Chapter9/1-幻灯片APP的构成.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html">
+            
+                    
+                    02.作成页面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html#copy页面">
+            
+                    
+                    ・copy页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html#编辑主题">
+            
+                    
+                    ・编辑主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html#准备向量形式的图片">
+            
+                    
+                    ・准备向量形式的图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html#页面的作成">
+            
+                    
+                    ・页面的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../Chapter9/2-作成页面.html">
+            
+                <a href="../Chapter9/2-作成页面.html#声音文件的准备">
+            
+                    
+                    ・声音文件的准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Chapter9/3-Timer处理的实装.html">
+            
+                <a href="../Chapter9/3-Timer处理的实装.html">
+            
+                    
+                    03.Timer处理的实装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Chapter9/4-播放声音.html">
+            
+                <a href="../Chapter9/4-播放声音.html">
+            
+                    
+                    04.播放声音
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.4.1" data-path="../Chapter9/4-播放声音.html">
+            
+                <a href="../Chapter9/4-播放声音.html#使用SoundPool">
+            
+                    
+                    ・使用SoundPool
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../Chapter9/5-使用Spinner.html">
+            
+                <a href="../Chapter9/5-使用Spinner.html">
+            
+                    
+                    05.使用Spinner
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.5.1" data-path="../Chapter9/5-使用Spinner.html">
+            
+                <a href="../Chapter9/5-使用Spinner.html#作成在Spinner里面显示的资源">
+            
+                    
+                    ・作成在Spinner里面显示的资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5.2" data-path="../Chapter9/5-使用Spinner.html">
+            
+                <a href="../Chapter9/5-使用Spinner.html#Spinner处理的实装">
+            
+                    
+                    ・Spinner处理的实装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5.3" data-path="../Chapter9/5-使用Spinner.html">
+            
+                <a href="../Chapter9/5-使用Spinner.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../Chapter9/6-使用拖动条.html">
+            
+                <a href="../Chapter9/6-使用拖动条.html">
+            
+                    
+                    06.使用拖动条
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.6.1" data-path="../Chapter9/6-使用拖动条.html">
+            
+                <a href="../Chapter9/6-使用拖动条.html#配置拖动条">
+            
+                    
+                    ・配置拖动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.2" data-path="../Chapter9/6-使用拖动条.html">
+            
+                <a href="../Chapter9/6-使用拖动条.html#添加拖动条的处理">
+            
+                    
+                    ・添加拖动条的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6.3" data-path="../Chapter9/6-使用拖动条.html">
+            
+                <a href="../Chapter9/6-使用拖动条.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../Chapter9/7-页面保持ON.html">
+            
+                <a href="../Chapter9/7-页面保持ON.html">
+            
+                    
+                    07.页面保持ON
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Chapter10/">
+            
+                <a href="../Chapter10/">
+            
+                    
+                    第十章-做一个相机APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../Chapter10/1-利用Intent制作一个相机摄影SNS连携APP.html">
+            
+                <a href="../Chapter10/1-利用Intent制作一个相机摄影SNS连携APP.html">
+            
+                    
+                    01.利用Intent制作一个相机摄影SNS连携APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1.1" data-path="../Chapter10/1-利用Intent制作一个相机摄影SNS连携APP.html">
+            
+                <a href="../Chapter10/1-利用Intent制作一个相机摄影SNS连携APP.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../Chapter10/2-使用Radio按钮.html">
+            
+                <a href="../Chapter10/2-使用Radio按钮.html">
+            
+                    
+                    02.使用Radio按钮
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.2.1" data-path="../Chapter10/2-使用Radio按钮.html">
+            
+                <a href="../Chapter10/2-使用Radio按钮.html#配置Radio按钮">
+            
+                    
+                    ・配置Radio按钮
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2.2" data-path="../Chapter10/2-使用Radio按钮.html">
+            
+                <a href="../Chapter10/2-使用Radio按钮.html#Radio按钮的处理">
+            
+                    
+                    ・Radio按钮的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html">
+            
+                    
+                    03.使用隐式Intent
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.3.1" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#关于隐式Intent">
+            
+                    
+                    ・关于隐式Intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.2" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#隐式Intent的设定">
+            
+                    
+                    ・隐式Intent的设定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.3" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#取得预览图片">
+            
+                    
+                    ・取得预览图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.4" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#在onActivityResult从Activity取得值">
+            
+                    
+                    ・在onActivityResult从Activity取得值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.5" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#在Manifest里面添加<queries>要素">
+            
+                    
+                    ・在Manifest里面添加要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3.6" data-path="../Chapter10/3-使用隐式Intent.html">
+            
+                <a href="../Chapter10/3-使用隐式Intent.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../Chapter10/4-在端末保存完整大小的图片.html">
+            
+                <a href="../Chapter10/4-在端末保存完整大小的图片.html">
+            
+                    
+                    04.在端末保存完整大小的图片
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.4.1" data-path="../Chapter10/1-4-在端末保存完整大小的图片.html">
+            
+                <a href="../Chapter10/1-4-在端末保存完整大小的图片.html#在文件里保存拍好的图片">
+            
+                    
+                    ・在文件里保存拍好的图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4.2" data-path="../Chapter10/1-4-在端末保存完整大小的图片.html">
+            
+                <a href="../Chapter10/1-4-在端末保存完整大小的图片.html#运行APP进行确认">
+            
+                    
+                    ・运行APP进行确认
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../Chapter10/5-使用Intent把照片连携到SNS.html">
+            
+                <a href="../Chapter10/5-使用Intent把照片连携到SNS.html">
+            
+                    
+                    05.使用Intent把照片连携到SNS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.5.1" data-path="../Chapter10/5-使用Intent把照片连携到SNS.html">
+            
+                <a href="../Chapter10/5-使用Intent把照片连携到SNS.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../Chapter10/6-设定权限以兼容老版本的安卓系统.html">
+            
+                <a href="../Chapter10/6-设定权限以兼容老版本的安卓系统.html">
+            
+                    
+                    06.设定权限以兼容老版本的安卓系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.6.1" data-path="../Chapter10/6-设定权限以兼容老版本的安卓系统.html">
+            
+                <a href="../Chapter10/6-设定权限以兼容老版本的安卓系统.html#在Manifest文件里面添加想许可的动作">
+            
+                    
+                    ・在Manifest文件里面添加想许可的动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6.2" data-path="../Chapter10/6-设定权限以兼容老版本的安卓系统.html">
+            
+                <a href="../Chapter10/6-设定权限以兼容老版本的安卓系统.html#实装请求用户许可的处理">
+            
+                    
+                    ・实装请求用户许可的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6.3" data-path="../Chapter10/6-设定权限以兼容老版本的安卓系统.html">
+            
+                <a href="../Chapter10/6-设定权限以兼容老版本的安卓系统.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第十一章-做一个日程安排APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="1-日程安排APP的构成.html">
+            
+                <a href="1-日程安排APP的构成.html">
+            
+                    
+                    01.日程安排APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1.1" data-path="1-日程安排APP的构成.html">
+            
+                <a href="1-日程安排APP的构成.html#数据库应用于SQL">
+            
+                    
+                    ・数据库应用于SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.2" data-path="1-日程安排APP的构成.html">
+            
+                <a href="1-日程安排APP的构成.html#Realm的使用方法">
+            
+                    
+                    ・Realm的使用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.3" data-path="1-日程安排APP的构成.html">
+            
+                <a href="1-日程安排APP的构成.html#Realm的构成">
+            
+                    
+                    ・Realm的构成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.1.4" data-path="1-日程安排APP的构成.html">
+            
+                <a href="1-日程安排APP的构成.html#项目的作成">
+            
+                    
+                    ・项目的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="2-作成页面layout.html">
+            
+                <a href="2-作成页面layout.html">
+            
+                    
+                    02.作成页面layout
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="2-作成页面layout.html">
+            
+                <a href="2-作成页面layout.html#Basic_Activity模板的特征">
+            
+                    
+                    ・Basic Activity模板的特征
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="2-作成页面layout.html">
+            
+                <a href="2-作成页面layout.html#Navigation容器">
+            
+                    
+                    ・Navigation容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.3" data-path="2-作成页面layout.html">
+            
+                <a href="2-作成页面layout.html#准备向量形式的图片">
+            
+                    
+                    ・准备向量形式的图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.4" data-path="2-作成页面layout.html">
+            
+                <a href="2-作成页面layout.html#作成页面">
+            
+                    
+                    ・作成页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html">
+            
+                    
+                    03.添加连携数据库于RecyclerView的处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.3.1" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#Realm的导入">
+            
+                    
+                    ・Realm的导入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.2" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#数据库的设定">
+            
+                    
+                    ・数据库的设定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.3" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#module的准备">
+            
+                    
+                    ・module的准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.4" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#取得数据库">
+            
+                    
+                    ・取得数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.5" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#RecyclerView是什么">
+            
+                    
+                    ・RecyclerView是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3.6" data-path="3-添加连携数据库于RecyclerView的处理.html">
+            
+                <a href="3-添加连携数据库于RecyclerView的处理.html#在RecyclerView里设定LayoutManager与作成的适配器">
+            
+                    
+                    ・在RecyclerView里设定LayoutManager与作成的适配器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.4" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html">
+            
+                    
+                    04.到数据库的注册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.4.1" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#作成注册用的碎片">
+            
+                    
+                    ・作成注册用的碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.2" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#设定页面迁移">
+            
+                    
+                    ・设定页面迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.3" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#作成注册页面">
+            
+                    
+                    ・作成注册页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.4" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#保存数据">
+            
+                    
+                    ・保存数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.5" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#运行一下试试吧">
+            
+                    
+                    ・运行一下试试吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.6" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#选择数据然后打开详细页面">
+            
+                    
+                    ・选择数据然后打开详细页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.7" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#实装回调">
+            
+                    
+                    ・实装回调
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.8" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#实装更新处理">
+            
+                    
+                    ・实装更新处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.9" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#运行一下试试吧">
+            
+                    
+                    ・运行一下试试吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.10" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#数据删除">
+            
+                    
+                    ・数据删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4.11" data-path="4-到数据库的注册.html">
+            
+                <a href="4-到数据库的注册.html#运行一下试试吧">
+            
+                    
+                    ・运行一下试试吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html">
+            
+                    
+                    05.利用dialog
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.5.1" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html#AlertDialog">
+            
+                    
+                    ・AlertDialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5.2" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html#作成dialog">
+            
+                    
+                    ・作成dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5.3" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html#准备确认dialog">
+            
+                    
+                    ・准备确认dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5.4" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html#显示dialog">
+            
+                    
+                    ・显示dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5.5" data-path="5-利用dialog.html">
+            
+                <a href="5-利用dialog.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../Chapter10/6-制作选择日期与时刻的dialog.html">
+            
+                <a href="../Chapter10/6-制作选择日期与时刻的dialog.html">
+            
+                    
+                    06.制作选择日期与时刻的dialog
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.6.1" data-path="6-制作选择日期与时刻的dialog.html">
+            
+                <a href="6-制作选择日期与时刻的dialog.html#选择日期的dialog的作成">
+            
+                    
+                    ・选择日期的dialog的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.2" data-path="6-制作选择日期与时刻的dialog.html">
+            
+                <a href="6-制作选择日期与时刻的dialog.html#选择时间的dialog的作成">
+            
+                    
+                    ・选择时间的dialog的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.3" data-path="6-制作选择日期与时刻的dialog.html">
+            
+                <a href="6-制作选择日期与时刻的dialog.html#使用作成的日期选择与时刻选择的dialog">
+            
+                    
+                    ・使用作成的日期选择与时刻选择的dialog
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6.4" data-path="6-制作选择日期与时刻的dialog.html">
+            
+                <a href="6-制作选择日期与时刻的dialog.html#运行">
+            
+                    
+                    ・运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="7-显示日历.html">
+            
+                <a href="7-显示日历.html">
+            
+                    
+                    07.显示日历
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.7.1" data-path="7-显示日历.html">
+            
+                <a href="7-显示日历.html#使用日历">
+            
+                    
+                    ・使用日历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7.2" data-path="7-显示日历.html">
+            
+                <a href="7-显示日历.html#运行一下试试吧">
+            
+                    
+                    ・运行一下试试吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Chapter12/">
+            
+                <a href="../Chapter12/">
+            
+                    
+                    第十二章-做一个旅行信息APP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Chapter12/1-旅行情报APP的构成.html">
+            
+                <a href="../Chapter12/1-旅行情报APP的构成.html">
+            
+                    
+                    01.旅行情报APP的构成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1.1" data-path="../Chapter12/1-旅行情报APP的构成.html">
+            
+                <a href="../Chapter12/1-旅行情报APP的构成.html#项目构成">
+            
+                    
+                    ・项目构成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.1.2" data-path="../Chapter12/1-旅行情报APP的构成.html">
+            
+                <a href="../Chapter12/1-旅行情报APP的构成.html#复制图片">
+            
+                    
+                    ・复制图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.1.3" data-path="../Chapter12/1-旅行情报APP的构成.html">
+            
+                <a href="../Chapter12/1-旅行情报APP的构成.html#作成assets文件夹">
+            
+                    
+                    ・作成assets文件夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.1.4" data-path="../Chapter12/1-旅行情报APP的构成.html">
+            
+                <a href="../Chapter12/1-旅行情报APP的构成.html#复制JSON文件">
+            
+                    
+                    ・复制JSON文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                    
+                    02.使用Kotlin读取JSON数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.2.1" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html#了解JSON数据的构造">
+            
+                    
+                    ・了解JSON数据的构造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2.2" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html#关于JSON数据的读取">
+            
+                    
+                    ・关于JSON数据的读取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2.3" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html#使用Kotlin_serialization设定">
+            
+                    
+                    ・使用Kotlin serialization设定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2.4" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html#准备数据变化目标类">
+            
+                    
+                    ・准备数据变化目标类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2.5" data-path="../Chapter12/2-使用Kotlin读取JSON数据.html">
+            
+                <a href="../Chapter12/2-使用Kotlin读取JSON数据.html#把JSON变化为对象(decode">
+            
+                    
+                    ・把JSON变化为对象(decode)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                    
+                    03.作成主要的一览显示页面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.3.1" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#作成CardView">
+            
+                    
+                    ・作成CardView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3.2" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#作成一览页面">
+            
+                    
+                    ・作成一览页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3.3" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#适配器的作成">
+            
+                    
+                    ・适配器的作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3.4" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#在RecyclerView里设定LayoutManager与作成好的适配器">
+            
+                    
+                    ・在RecyclerView里设定LayoutManager与作成好的适配器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3.5" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#作成从MainActivity调用ListFragment">
+            
+                    
+                    ・从MainActivity调用ListFragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3.6" data-path="../Chapter12/3-作成主要的一览显示页面.html">
+            
+                <a href="../Chapter12/3-作成主要的一览显示页面.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html">
+            
+                    
+                    04.作成详细页面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.4.1" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#作成详细页面用的碎片">
+            
+                    
+                    ・作成详细页面用的碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.2" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#显示图片">
+            
+                    
+                    ・显示图片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.3" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#配置滚动条">
+            
+                    
+                    ・配置滚动条
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.4" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#使用ShapeDrawable制作title部分">
+            
+                    
+                    ・使用ShapeDrawable制作title部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.5" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#选择数据打开详细页面">
+            
+                    
+                    ・选择数据打开详细页面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.6" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#实装详细页面的显示处理">
+            
+                    
+                    ・实装详细页面的显示处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.7" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#碰触行的时候打开DetailFragment">
+            
+                    
+                    ・碰触行的时候打开DetailFragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4.8" data-path="../Chapter12/4-作成详细页面.html">
+            
+                <a href="../Chapter12/4-作成详细页面.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="../Chapter12/5-使用动画.html">
+            
+                <a href="../Chapter12/5-使用动画.html">
+            
+                    
+                    05.使用动画
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.5.1" data-path="../Chapter12/5-使用动画.html">
+            
+                <a href="../Chapter12/5-使用动画.html#碎片动画">
+            
+                    
+                    ・碎片动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5.2" data-path="../Chapter12/5-使用动画.html">
+            
+                <a href="../Chapter12/5-使用动画.html#MotionLayout">
+            
+                    
+                    ・MotionLayout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5.3" data-path="../Chapter12/5-使用动画.html">
+            
+                <a href="../Chapter12/5-使用动画.html#将MotionLayout设为有效">
+            
+                    
+                    ・将MotionLayout设为有效
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6" data-path="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                <a href="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                    
+                    06.使用MotionEditor制作动画
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.6.1" data-path="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                <a href="../Chapter12/6-使用MotionEditor制作动画.html#制作动画后的制约">
+            
+                    
+                    ・制作动画后的制约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6.2" data-path="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                <a href="../Chapter12/6-使用MotionEditor制作动画.html#添加关键帧">
+            
+                    
+                    ・添加关键帧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6.3" data-path="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                <a href="../Chapter12/6-使用MotionEditor制作动画.html#添加Trigger">
+            
+                    
+                    ・添加Trigger
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.6.4" data-path="../Chapter12/6-使用MotionEditor制作动画.html">
+            
+                <a href="../Chapter12/6-使用MotionEditor制作动画.html#运行APP">
+            
+                    
+                    ・运行APP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Appendix/">
+            
+                <a href="../Appendix/">
+            
+                    
+                    APPENDIX
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Appendix/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Appendix/1-AndroidStudio的便利机能.html">
+            
+                    
+                    01.AndroidStudio的便利机能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1.1" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#折叠代码">
+            
+                    
+                    ・折叠代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.2" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#对比Source">
+            
+                    
+                    ・对比Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.3" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#Search_Everywhere">
+            
+                    
+                    ・Search Everywhere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.4" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#debug">
+            
+                    
+                    ・debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.5" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#FindUsages">
+            
+                    
+                    ・FindUsages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.6" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#AnalyzeDataFlowToHere">
+            
+                    
+                    ・AnalyzeDataFlowToHere
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.7" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#最近使用的文件">
+            
+                    
+                    ・最近使用的文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.8" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#构造的显示">
+            
+                    
+                    ・构造的显示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.9" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#替换">
+            
+                    
+                    ・替换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.10" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#经常使用的ShortCut一览">
+            
+                    
+                    ・经常使用的ShortCut一览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.1.11" data-path="../Chapter12/1-AndroidStudio的便利机能.html">
+            
+                <a href="../Chapter12/1-AndroidStudio的便利机能.html#ShortCutKey的变更">
+            
+                    
+                    ・ShortCutKey的变更
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Appendix/2-示例项目的导入.html">
+            
+                <a href="../Appendix/2-示例项目的导入.html">
+            
+                    
+                    02.示例项目的导入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../Chapter12/2-示例项目的导入.html">
+            
+                <a href="../Chapter12/2-示例项目的导入.html#下载示例">
+            
+                    
+                    ・下载示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.2" data-path="../Chapter12/2-示例项目的导入.html">
+            
+                <a href="../Chapter12/2-示例项目的导入.html#导入项目">
+            
+                    
+                    ・导入项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >04.到数据库的注册</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="04&#x5230;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6CE8;&#x518C;">04.&#x5230;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6CE8;&#x518C;</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3-添加连携数据库于RecyclerView的处理.html#在RecyclerView里设定LayoutManager与作成的适配器" class="navigation navigation-prev " aria-label="Previous page: ・在RecyclerView里设定LayoutManager与作成的适配器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-到数据库的注册.html#作成注册用的碎片" class="navigation navigation-next " aria-label="Next page: ・作成注册用的碎片">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"04.到数据库的注册","level":"1.12.4","depth":2,"next":{"title":"・作成注册用的碎片","level":"1.12.4.1","depth":3,"anchor":"#作成注册用的碎片","path":"Chapter11/4-到数据库的注册.md","ref":"Chapter11/4-到数据库的注册.md#作成注册用的碎片","articles":[]},"previous":{"title":"・在RecyclerView里设定LayoutManager与作成的适配器","level":"1.12.3.6","depth":3,"anchor":"#在RecyclerView里设定LayoutManager与作成的适配器","path":"Chapter11/3-添加连携数据库于RecyclerView的处理.md","ref":"Chapter11/3-添加连携数据库于RecyclerView的处理.md#在RecyclerView里设定LayoutManager与作成的适配器","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook Tutorial","gitbook":"*","description":"This is a gitbook example"},"file":{"path":"Chapter11/4-到数据库的注册.md","mtime":"2021-05-21T13:52:02.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-21T14:36:13.577Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
