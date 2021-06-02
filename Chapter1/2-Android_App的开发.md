@@ -97,8 +97,9 @@ CUP是AMD Ryzen的话是不能使用Intel HAXM的。取而代之的是用Windows
 <div id="从Java到Kotlin"></div>
 在这之前Java是开发安卓APP唯一的选择，但是伴随着Android Studio 3.0的发布，对新语言Kotlin的支持也开始了。谷歌在他自己主办的开发者活动「Google I/O 2019」当中发表了他们在安卓更进一步强化了「Kotlin fast」这一事。因为今后最新版本提供的机能最初都是面向Kotlin的，所以从现在开始安卓的开发的话推荐使用Kotlin开发。本书也是，示例程序都是用Kotlin写的。
 Kotlin不单能在JVM上运作，与Java之间还有着100%的互换性。因此对于有Java开发经验的人来说是个很容易学习的语言。而且Java的Lib也能就这样直接用。
-而且比起Java，Kotlin能写出更简洁的程序。比如说，Java当中准备getter与setter是「惯例作法」，但在Kotlin当中通过「属性」让其更简洁了。其它一些近年主流的语言比如Python，Swift所持有的很潮的机能也是采用了的。
+比起Java，Kotlin能写出更简洁的程序。比如说，Java当中准备getter与setter是「惯例作法」，但在Kotlin当中通过「属性」让其更简洁了。其它一些近年主流的语言比如Python，Swift所持有的很潮的机能也是采用了的。
 Kotlin具有以下几个特征
+
 + 代码简洁
 + Null安全
 + 采用了lambda表达式等函数式编程的概念
